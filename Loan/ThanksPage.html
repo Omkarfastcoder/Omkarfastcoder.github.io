@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanks Page</title>
+    <style>
+        body {
+            background-color: #fbe7f9;
+            border: 10px solid rgb(116, 31, 31);
+            border-radius: 20px;
+            margin: 15px;
+        }
+
+        h1 {
+            margin: 100px auto;
+            text-align: center;
+            background-color: gainsboro;
+        }
+
+        .msg {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #mailin {
+            color: blue;
+            font-size: 25px;
+            font-style: italic;
+        }
+
+        .otpdiv {
+            margin: 50px auto;
+            padding: 5px;
+            align-items: center;
+            display: block;
+            background-color: gainsboro;
+        }
+
+        .otpdiv button {
+            display: block;
+            align-items: center;
+            width: 150px;
+            height: 30px;
+            background-color: greenyellow;
+            margin: 10px auto;
+            border-radius: 7px;
+        }
+        .otpdiv div{
+            display: flex;
+            justify-content: center;
+        }
+
+        .otpdiv div input {
+            width: 100px;
+            height: 30px;
+            margin:20px 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dear <span id="namein"></span>,<p> Thank You For Enquiry!!</p>
+    </h1>
+
+    <p class="msg">We are Sending You a 4-Digit Verification Code On Your mail Id <span id="mailin"></span> Please
+        Verify It
+    </p>
+    <div class="otpdiv">
+        <button id="otp" onclick="generateOtp()">Generate OTP</button>
+        <div>
+            <input type="text" id="otpout" />
+            <input type="text" id="otpin" placeholder="enter otp here" />
+        </div>
+        <button onclick="ValidateOTP()" id="validOtp">Validate OTP</button>
+    </div>
+
+    <script>
+        document.getElementById('namein').innerHTML = localStorage.getItem("nameout");
+        document.getElementById('mailin').innerHTML = localStorage.getItem("mailout");
+    </script>
+    <script src="js/loan.js"></script>
+</body>
+
+</html>

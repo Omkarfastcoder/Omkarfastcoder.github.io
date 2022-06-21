@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan</title>
+    <style>
+        #word{
+            color: white;
+        }
+        body{
+            background-color: #fbe7f9;
+            background-image: url("bodybg.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            color: white;
+        }
+        form h1 {
+            background-color: #6862679c;
+            padding: 7px;
+            text-align: center;
+            font-size: 45px;
+            text-decoration: underline;
+            font-weight: 600;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        fieldset {
+            margin: 20px auto;
+            border: 1px solid gray;
+            
+        }
+
+        fieldset legend {
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .wrapper div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 4px;
+        }
+
+        .wrapper input {
+            margin: 5px 25px;
+            width: 300px;
+            height: 18px;
+            border-radius: 6px;
+            border: 1px solid gray;
+        }
+
+        #typeofloan {
+            margin-left: 42px;
+            width: 150px;
+            border-radius: 6px;
+            height: 20px;
+        }
+
+        .mwrapper label {
+            margin-right: 50px;
+        }
+
+        #gender {
+            margin-left: 30px;
+            border-radius: 6px;
+            width: 100px;
+            height: 20px;
+        }
+
+        .captcha {
+            display: block;
+            margin: 20px auto;
+        }
+
+        .img {
+            background-image: url("bgcaptcha.png");
+            width: 190px;
+            height: 50px;
+            display: flex;
+        }
+
+        .img div {
+            display: inline-flex;
+            margin: 10px auto;
+            width: 50px;
+            height: 30px;
+            color: white;
+            font-weight: 600;
+            font-size: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+        img{
+            width: 30px;
+            height: 30px;
+            margin: 5px 20px;
+            /* border: 1px solid red; */
+        }
+        #result{
+            text-align: center;
+            width: 150px;
+            height: 25px;
+            border-radius: 7px;
+            border: 1px solid gray;
+            background-color: rgb(226, 214, 214);
+        }
+        #submit{
+            width: 200px;
+            background-color: #a54426;
+            height: 50px;
+            font-size: 25px;
+            border: 2px solid #772911;
+            border-radius: 10px;
+            margin-bottom: 50px;
+            margin-left: 36rem
+        }
+    </style>
+</head>
+
+<body onload="CaptchaGenerate()">
+    <form action="ThanksPage.html" method="POST">
+        <h1>LOAN APPLICATION FORM</h1>
+        <fieldset class="wrapper">
+            <legend>Basic Information</legend>
+            <div>
+                <label for="fn">Full Name:</label>
+                <input type="text" name="fname" id="fn" onchange="NameValidation()" required>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" onchange="EmailValidation()" required>
+            </div>
+            <div>
+                <label for="pan">Pan Card Number:</label>
+                <input type="text" name="pan" id="pan" onchange="PanValidation()" required>
+            </div>
+            <div>
+                <label for="telephone">Contact Number:</label>
+                <input type="text" name="telephone" onblur="PhoneValidation()" required>
+            </div>
+            <div>
+                <label for="haddress">Home Address:</label>
+                <input type="text" name="address" id="haddress">
+            </div>
+        </fieldset>
+
+        <fieldset class="wrapper">
+            <legend>Work Information</legend>
+            <div>
+                <label for="occupation">Current Occupation</label>
+                <input type="text" name="occupation" />
+            </div>
+            <div>
+                <label for="company name">Employer Name</label>
+                <input type="text" name="company name" />
+            </div>
+            <div>
+                <label for="company location">Employer Address</label>
+                <input type="text" name="company location" />
+            </div>
+        </fieldset>
+
+        <fieldset class="wrapper">
+            <legend>Loan Type & Amount</legend>
+            <div>
+                <label for="typeofloan">Select Loan Type: </label>
+                <select name="loan" id="typeofloan">
+                    <option value="s" selected>Select</option>
+                    <option value="c">Commercial</option>
+                    <option value="re">Real Estate</option>
+                    <option value="p">Personal</option>
+                    <option value="m">Mortgage</option>
+                </select>
+            </div>
+            <div>
+                <label for="loanAmt">Enter Loan Amount:</label>
+                <input type="text" name="loanAmt" id="loanAmt" onkeyup="doConvert()" onblur="LoanAmtValidation()" required/>
+                <span id="words"></span>
+            </div>
+        </fieldset>
+
+        <fieldset class="mwrapper">
+            <legend>Marital Status</legend>
+            <input type="radio" id="Mr" name="MStatus" value="M">
+            <label for="Mr">Married</label>
+            <input type="radio" id="Ur" name="MStatus" value="U">
+            <label for="Ur">Unmarried</label>
+            <input type="radio" id="Dr" name="MStatus" value="D">
+            <label for="Dr">Divorced</label>
+        </fieldset>
+        <fieldset>
+            <legend>Gender</legend>
+            <label for="gender"> Select Gender:</label>
+            <select id="gender" id="gender">
+                <option value="none" selected>Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">other</option>
+            </select>
+        </fieldset>
+        <fieldset class="captcha">
+            <legend>Verify Captcha</legend>
+            <div class="img" id="captchaExp">
+                <div id="num1"></div>
+                <div id="operator"></div>
+                <div id="num2"></div>
+                <div> = ? </div>
+            </div>
+            <input type="text" placeholder="Answer Here" id="result" onchange="CaptchaValidation()" required/>
+            <img src="load.png" alt="load"  onclick="CaptchaGenerate()" >
+            <span id="captchamsg"></span>
+        </fieldset>
+
+        <button type="submit" id="submit">Submit</button>
+    </form>
+
+    <script src="js/loan.js"></script>
+</body>
+
+</html>
