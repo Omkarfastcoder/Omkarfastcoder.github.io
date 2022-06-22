@@ -171,7 +171,7 @@ function ValidateOTP() {
     if (attempt > 2)
     {
         attempt = 0;
-        window.location.href = "#";
+        window.location.href = "http://pixel.co/error.html";
     }
     attempt = attempt + 1;
     var a = document.getElementById("otpin").value;
