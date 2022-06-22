@@ -168,11 +168,6 @@ function generateOtp() {
 }
 var attempt=0;
 function ValidateOTP() {
-    if (attempt > 2)
-    {
-        attempt = 0;
-        window.location.href = "http://pixel.co/error.html";
-    }
     attempt = attempt + 1;
     var a = document.getElementById("otpin").value;
     var b = document.getElementById("otpout").value;
@@ -181,7 +176,15 @@ function ValidateOTP() {
         window.location.href = "http://pixel6.co/";
     }
     else {
-        alert('Invalid Code ');
+        if (attempt > 2)
+        {
+            attempt = 0;
+            window.location.href = "http://pixel.co/error.html";
+        }
+        else
+        {
+            alert('Invalid Code ');
+        }
     }
 }
 
