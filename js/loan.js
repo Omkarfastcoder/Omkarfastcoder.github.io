@@ -171,7 +171,7 @@ function generateOtp() {
 function ValidateOTP() {
     var a = document.getElementById("otpin").value;
     var b = document.getElementById("otpout").value;
-    if (a == b) {
+    if (a == b && b.length > 0) {
         window.location.href = "http://pixel6.co/";
     }
     else {
