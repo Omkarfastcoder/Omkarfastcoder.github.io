@@ -164,12 +164,20 @@ function CaptchaValidation()
 function generateOtp() {
     const val = Math.floor(1000 + Math.random() * 9000);
     document.getElementById("otpout").value = val;
+    attempt = 0;
 }
-
+var attempt=0;
 function ValidateOTP() {
+    if (attempt > 2)
+    {
+        attempt = 0;
+        window.location.href = "#";
+    }
+    attempt = attempt + 1;
     var a = document.getElementById("otpin").value;
     var b = document.getElementById("otpout").value;
     if (a == b && b.length > 0) {
+        attempt =0;
         window.location.href = "http://pixel6.co/";
     }
     else {
