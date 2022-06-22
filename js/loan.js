@@ -25,7 +25,7 @@ function enableSubmitButton()
        (document.getElementById("email").value.length > 0) &&
        (document.getElementById("pan").value.length > 0) &&
        (document.getElementById("loanAmt").value.length > 0) &&
-      document.getElementById("telephone").value.length > 0) &&)
+      document.getElementById("telephone").value.length > 0) )
        {
        document.getElementById('submit').disabled = false;
        }
