@@ -58,7 +58,7 @@ function PanValidation() {
 }
 
 function PhoneValidation() {
-    var regph = /^\d{11}$/;
+    var regph = /^\d{10}$/;
     var phn = parseInt(document.getElementById('telephone').value);
     if (!regph.test(phn)) {
         document.getElementById('submit').disabled = true;
