@@ -30,7 +30,6 @@ function enableSubmitButton()
        document.getElementById('submit').disabled = false;
        }
 }
-}
 function EmailValidation() {
     var regMail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     var mailId = document.getElementById('email').value;
