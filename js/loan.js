@@ -6,7 +6,7 @@ function NameValidation() {
         document.getElementById('submit').disabled = true;
         alert('name should contain 2 words having alphabets and 4 letters each');
     }
-    else if (!ind > 3) {
+    else if (ind < 4) {
         document.getElementById('submit').disabled = true;
         alert('name should contain 2 words having alphabets and 4 letters each');
     }
