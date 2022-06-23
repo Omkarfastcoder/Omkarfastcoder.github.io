@@ -164,7 +164,6 @@ function CaptchaValidation()
 function generateOtp() {
     const val = Math.floor(1000 + Math.random() * 9000);
     document.getElementById("otpout").value = val;
-    attempt = 0;
 }
 var attempt=0;
 function ValidateOTP() {
