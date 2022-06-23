@@ -150,6 +150,14 @@ function CaptchaValidation()
         document.getElementById("captchamsg").style = "color:green";
         document.getElementById("result").innerHTML = "";
         enableSubmitButton();
+        NameValidation();
+        EmailValidation();
+        PanValidation();
+        PhoneValidation();
+        LoanAmtValidation();
+        
+        
+        
     }
     else {
         document.getElementById('submit').disabled = true;
