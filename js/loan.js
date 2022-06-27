@@ -123,7 +123,7 @@ function CaptchaGenerate() {
             break;
         case 3:
             operator = "+";
-            ActualResult = Rnum1 * Rnum2;
+            ActualResult = Rnum1 + Rnum2;
             break;
     }
     document.getElementById("operator").innerHTML = operator;
