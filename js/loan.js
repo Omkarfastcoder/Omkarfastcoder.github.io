@@ -180,6 +180,9 @@ function ValidateOTP() {
     var a = localStorage.getItem(otp);
     var b = document.getElementById("otpin").value;
     if (a == b && b.length > 0) {
+        document.getElementById("otpError").visible=false;
+        document.getElementById("otpError").style="color:red";
+        document.getElementById("otpError").innerHTML='';
         attempt =0;
         window.location.href = "http://pixel6.co/";
     }
@@ -191,7 +194,9 @@ function ValidateOTP() {
         }
         else
         {
-            alert('Invalid Code ');
+            document.getElementById("otpError").visible=true;
+            document.getElementById("otpError").style="color:red";
+            document.getElementById("otpError").innerHTML='Invalid OTP, try again';   
             attempt = attempt + 1;
         }
     }
