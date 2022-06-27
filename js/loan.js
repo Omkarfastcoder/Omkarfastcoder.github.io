@@ -98,7 +98,7 @@ function doConvert(){
 
     if(numberInput.toString().length > 9) 
     {
-        document.getElementById("words").style="color:green";
+        document.getElementById("words").style="color:red";
         return words.innerHTML = 'maximum digits allwed are 9 digits';
     }
     console.log(numberInput);
