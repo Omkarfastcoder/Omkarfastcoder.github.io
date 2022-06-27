@@ -112,7 +112,7 @@ function doConvert(){
     outtxt +=num[4] != 0 ? (oneToTwenty[Number(num[4])] || `${tenth[num[4][0]]} ${oneToTwenty[num[4][1]]}`) +'hundred ': ''; 
     outtxt +=num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `)  + ' rupees only ' : ''; 
 
-    style="color:green";
+    words.style="color:green";
     words.innerHTML = outtxt;
 }
 function CaptchaGenerate() {
