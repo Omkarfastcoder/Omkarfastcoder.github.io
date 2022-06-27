@@ -97,7 +97,7 @@ function f1()
 
 }
 
-function f2()
+function f2(n)
 {
     let unit = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ',
     'eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
@@ -117,7 +117,7 @@ let str='';
     return str;
 }
 
-function convert()
+function convert(n)
 {
 let ss='';
 if (n<100)
