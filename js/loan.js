@@ -89,6 +89,57 @@ function LoanAmtValidation() {
     }
 }
 
+function f1()
+{
+    var num=document.getElementById("loanamt");
+ var word=convert(num);
+ document.getElementById("word").innerHTML=document.write(word);
+
+}
+
+function f2()
+{
+let str='';
+    if(n<20)
+    {
+        str=unit[n];
+
+    }
+    else if(n>=20 && n<100)
+    {
+        str=tens[n%100] +unit[n/10];
+        
+    }
+    return str;
+}
+
+function convert()
+{
+let ss='';
+if (n<100)
+{
+    ss=f2(n);
+}
+ else if(n>=100 && n<1000)
+ {
+     ss=f2(n/100) + hundred + convert(n%100);
+ }
+ else if(n>=1000 && n<100000)
+ {
+     ss=f2(n/1000) + thousand + convert(n%1000);
+ }
+ else if(n>=100000 && n<1000000)
+ {
+     ss=f2(n/10000) + lakh + convert(n%10000);
+ }
+ else if(n>=1000000 && n<100000000)
+ {
+     ss=f2(n/100) + crore + convert(n%100);
+    
+ }
+}
+
+
 function numberToWord()
 {
     let numberInput = document.querySelector('#loanAmt').value ;
@@ -96,7 +147,7 @@ function numberToWord()
 
     let oneToTwenty = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ',
     'eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
-    let tenth = ['' '' 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+    let tenth = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
     
     var num = numberInput;
     var digits = [];
