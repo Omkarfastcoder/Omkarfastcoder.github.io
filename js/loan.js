@@ -121,20 +121,20 @@ function numberToWord()
     }
     else if(i==2)  // hundred
     {
-        wordString[i] = "hundred " + oneToTwenty[digits[i]];
+        wordString[i] =  oneToTwenty[digits[i]] + "hundred ";
     }
     else if(i==3)
     {
         if( i +1 < size)
         {
             var thousandNum = digits[i] + digits[i+1]*10;
-            wordString[i] = "thousand " + oneToTwenty[i];
+            wordString[i] =  oneToTwenty[i] + "thousand " ;
             i = i+1;
             wordString[i] = tenth[i]
         }
         else
         {
-            wordString[i] = "thousand " + oneToTwenty[digits[i]];
+            wordString[i] =  oneToTwenty[digits[i]] + "thousand ";
         }
     }
     else if(i==5)
@@ -142,7 +142,7 @@ function numberToWord()
         if( i +1 < size)
         {
             var thousandNum = digits[i] + digits[i+1]*10;
-            wordString[i] = "lacs " + oneToTwenty[i];
+            wordString[i] = oneToTwenty[i] + "lacs ";
             i = i+1;
             wordString[i] = tenth[i]
         }
@@ -156,7 +156,7 @@ function numberToWord()
         if( i +1 < size)
         {
             var thousandNum = digits[i] + digits[i+1]*10;
-            wordString[i] = "corore " + oneToTwenty[i];
+            wordString[i] = oneToTwenty[i] + "coroe" ;
             i = i+1;
             wordString[i] = tenth[i]
         }
