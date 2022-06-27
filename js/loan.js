@@ -111,6 +111,7 @@ function numberToWord()
    var size = digits.length;
 
    var wordString = [];
+   var k=0;
    for (var i=0; i<size; i++)
    {
     if (numberInput < 20)
@@ -135,9 +136,16 @@ function numberToWord()
     {
         if( i +1 < size)
         {
+            if (digits[i] + digits[i+1]*10 < 20)
+            {
+                wordString[i] = oneToTwenty[digits[i] + 10] + "thousand"
+            }
+            else
+            {
             wordString[i] =  oneToTwenty[digits[i]] + "thousand " ;
             i = i+1;
-            wordString[i] = tenth[digits[i]]
+            wordString[i] = tenth[digits[i]];
+            }
         }
         else
         {
@@ -148,9 +156,16 @@ function numberToWord()
     {
         if( i +1 < size)
         {
+            if (digits[i] + digits[i+1]*10 < 20)
+            {
+                wordString[i] = oneToTwenty[digits[i] + 10] + "lacs"
+            }
+            else
+            {
             wordString[i] = oneToTwenty[digits[i]] + "lacs ";
             i = i+1;
             wordString[i] = tenth[digits[i]]
+            }
         }
         else
         {
@@ -161,9 +176,16 @@ function numberToWord()
     {
         if( i +1 < size)
         {
+            if (digits[i] + digits[i+1]*10 < 20)
+            {
+                wordString[i] = oneToTwenty[digits[i] + 10] + "coroe"
+            }
+            else
+            {
             wordString[i] = oneToTwenty[digits[i]] + "coroe" ;
             i = i+1;
             wordString[i] = tenth[digits[i]]
+            }
         }
         else
         {
