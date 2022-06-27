@@ -139,7 +139,7 @@ if (n<100)
  }
  else if(n>=1000000 && n<100000000)
  {
-     ss=f2( Math.trunc(n/100)) + " crore " + convert(n%100);
+     ss=f2( Math.trunc(n/100000)) + " crore " + convert(n%100000);
     
  }
  return ss;
