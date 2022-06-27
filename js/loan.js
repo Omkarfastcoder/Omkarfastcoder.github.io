@@ -181,7 +181,6 @@ function ValidateOTP() {
     var b = document.getElementById("otpin").value;
     if (a == b && b.length > 0) {
         document.getElementById("otpError").visible=false;
-        document.getElementById("otpError").style="color:red";
         document.getElementById("otpError").innerHTML='';
         attempt =0;
         window.location.href = "http://pixel6.co/";
