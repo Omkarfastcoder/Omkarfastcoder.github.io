@@ -98,7 +98,7 @@ function doConvert(){
 
     if(numberInput.toString().length > 9) 
     {
-        return words.innerHTML = 'overlimit' ;
+        return words.innerHTML = 'maximum digits allwed are 9 digits';
     }
     console.log(numberInput);
     //let num = ('0000000000'+ numberInput).slice(-10).match(/^(\d{1})(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
@@ -112,7 +112,7 @@ function doConvert(){
     outtxt +=num[4] != 0 ? (oneToTwenty[Number(num[4])] || `${tenth[num[4][0]]} ${oneToTwenty[num[4][1]]}`) +'hundred ': ''; 
     outtxt +=num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `)  + ' rupees only ' : ''; 
 
-    words.style="color:green";
+    document.getElementById("words").style="color:green";
     words.innerHTML = outtxt;
 }
 function CaptchaGenerate() {
