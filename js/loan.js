@@ -44,6 +44,7 @@ function EmailValidation() {
     }
     else {
         document.getElementById("emailError").visible=false;
+        document.getElementById("emailError").innerHTML='';
         enableSubmitButton();
     }
     localStorage.setItem("mailout", mailId);
@@ -61,6 +62,7 @@ function PanValidation() {
     else
     {
         document.getElementById("panError").visible=false;
+        document.getElementById("panError").innerHTML='';
         enableSubmitButton();
     }
     
