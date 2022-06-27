@@ -118,6 +118,7 @@ function numberToWord()
     {
         var tw = digits[i] + 10;
         wordString[i] = oneToTwenty[tw]; // + digits[i+1]*10];
+        i = i+1;
     }
     else
     {
@@ -139,6 +140,7 @@ function numberToWord()
             if (digits[i] + digits[i+1]*10 < 20)
             {
                 wordString[i] = oneToTwenty[digits[i] + 10] + "thousand"
+                i=i+1;
             }
             else
             {
@@ -159,6 +161,7 @@ function numberToWord()
             if (digits[i] + digits[i+1]*10 < 20)
             {
                 wordString[i] = oneToTwenty[digits[i] + 10] + "lacs"
+                i=i+1;
             }
             else
             {
@@ -179,6 +182,7 @@ function numberToWord()
             if (digits[i] + digits[i+1]*10 < 20)
             {
                 wordString[i] = oneToTwenty[digits[i] + 10] + "coroe"
+                i=i+1;
             }
             else
             {
