@@ -107,7 +107,7 @@ function numberToWord()
         digits.push(num % 10);
         num = Math.trunc(num / 10);
     }
-   digits.reverse();
+  // digits.reverse();
    var size = digits.length;
 
    var wordString = [];
