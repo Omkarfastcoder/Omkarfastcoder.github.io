@@ -4,15 +4,19 @@ function NameValidation() {
     var ind = full_name.indexOf(' ');
     if (!RegName.test(full_name)) {
         document.getElementById('submit').disabled = true;
+        document.getElementById("nameError").visible=true;
         document.getElementById("nameError").style="color:red";
         document.getElementById("nameError").innerHTML='name should contain 2 words having alphabets and 4 letters each';
     }
     else if (ind < 4) {
         document.getElementById('submit').disabled = true;
+        document.getElementById("nameError").visible=true;
         document.getElementById("nameError").style="color:red";
         document.getElementById("nameError").innerHTML='name should contain 2 words having alphabets and 4 letters each';  
     }
     else {
+        document.getElementById("nameError").visible=false;
+        document.getElementById("nameError").innerHTML='name should contain 2 words having alphabets and 4 letters each';
         enableSubmitButton();
     }
     var [first, last] = full_name.split(' ');
