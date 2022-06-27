@@ -126,19 +126,19 @@ if (n<100)
 }
  else if(n>=100 && n<1000)
  {
-     ss=f2(n/100) + hundred + convert(n%100);
+     ss=f2(n/100) + " hundred " + convert(n%100);
  }
  else if(n>=1000 && n<100000)
  {
-     ss=f2(n/1000) + thousand + convert(n%1000);
+     ss=f2(n/1000) + " thousand " + convert(n%1000);
  }
  else if(n>=100000 && n<1000000)
  {
-     ss=f2(n/10000) + lakh + convert(n%10000);
+     ss=f2(n/10000) + " lakh " + convert(n%10000);
  }
  else if(n>=1000000 && n<100000000)
  {
-     ss=f2(n/100) + crore + convert(n%100);
+     ss=f2(n/100) + " crore " + convert(n%100);
     
  }
  return ss;
