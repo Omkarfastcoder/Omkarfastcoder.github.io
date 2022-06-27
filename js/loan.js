@@ -114,7 +114,11 @@ function numberToWord()
    var k=0;
    for (var i=0; i<size; i++)
    {
-    if (numberInput < 20)
+    if (numberInput < 9)
+    {
+        wordString[i] = oneToTwenty[digits[i]];
+    }
+    else if (numberInput < 20 && numberInput > 9)
     {
         var tw = digits[i] + 10;
         wordString[i] = oneToTwenty[tw]; // + digits[i+1]*10];
