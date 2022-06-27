@@ -91,7 +91,7 @@ function LoanAmtValidation() {
 
 function f1()
 {
-    var num=document.getElementById("loanAmt");
+    var num=ParseInt(document.getElementById("loanAmt"));
  var word=convert(num);
  document.getElementById("words").innerHTML=document.write(word);
 
