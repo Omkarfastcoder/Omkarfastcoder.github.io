@@ -173,11 +173,11 @@ function CaptchaValidation()
 function generateOtp() {
     const val = Math.floor(1000 + Math.random() * 9000);
     console.log("OTP IS = " + val)
-    localStorage.setItem("otp", val);
+    localStorage.setItem("otp1", val);
 }
 var attempt=0;
 function ValidateOTP() {
-    var a = localStorage.getItem("otp");
+    var a = localStorage.getItem("otp1");
     var b = document.getElementById("otpin").value;
     if (a == b && b.length > 0) {
         document.getElementById("otpError").visible=false;
