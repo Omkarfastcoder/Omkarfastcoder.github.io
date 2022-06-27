@@ -115,12 +115,8 @@ function numberToWord()
    {
     if (numberInput < 20)
     {
-        if(numberInput < 9)
-        {
-            wordString[i] = [digits[i]];
-        }
-        else
-            wordString[i] = oneToTwenty[digits[i] + digits[i+1]*10];
+        var tw = digits[i] + 10;
+        wordString[i] = oneToTwenty[tw]; // + digits[i+1]*10];
     }
     else
     {
