@@ -38,10 +38,12 @@ function EmailValidation() {
     var mailId = document.getElementById('email').value;
     if (!regMail.test(mailId)) {
         document.getElementById('submit').disabled = true;
+        document.getElementById("emailError").visible=true;
         document.getElementById("emailError").style="color:red";
         document.getElementById("emailError").innerHTML='Please enter valid email Id';  
     }
     else {
+        document.getElementById("emailError").visible=false;
         enableSubmitButton();
     }
     localStorage.setItem("mailout", mailId);
@@ -52,11 +54,13 @@ function PanValidation() {
     var panId = document.getElementById('pan').value;
     if (!regpan.test(panId)) {
         document.getElementById('submit').disabled = true;
+        document.getElementById("panError").visible=true;
         document.getElementById("panError").style="color:red";
         document.getElementById("panError").innerHTML='Pan Number should be in the form: "AAAAA 1234 B" \nNOTE:no spaces allowed in between';  
     }
     else
     {
+        document.getElementById("panError").visible=false;
         enableSubmitButton();
     }
     
@@ -68,11 +72,15 @@ function LoanAmtValidation() {
     var lamt = document.getElementById("loanAmt").value;
     if (!regamt.test(lamt)) {
         document.getElementById('submit').disabled = true;
-        alert('please enter valid amount');
+        document.getElementById("words").visible=true;
+        document.getElementById("words").style="color:red";
+        document.getElementById("words").innerHTML='please enter valid amount';  
     }
     else if (lamt.length > 9) {
         document.getElementById('submit').disabled = true;
-        alert('maximum digits allwed are 9 digits');
+        document.getElementById("words").visible=true;
+        document.getElementById("words").style="color:red";
+        document.getElementById("words").innerHTML='maximum digits allwed are 9 digits';  
     }
     else {
     enableSubmitButton();
@@ -104,6 +112,7 @@ function doConvert(){
     outtxt +=num[4] != 0 ? (oneToTwenty[Number(num[4])] || `${tenth[num[4][0]]} ${oneToTwenty[num[4][1]]}`) +'hundred ': ''; 
     outtxt +=num[5] != 0 ? (oneToTwenty[Number(num[5])] || `${tenth[num[5][0]]} ${oneToTwenty[num[5][1]]} `)  + ' rupees only ' : ''; 
 
+    style="color:green";
     words.innerHTML = outtxt;
 }
 function CaptchaGenerate() {
