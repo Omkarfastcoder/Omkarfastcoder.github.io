@@ -177,7 +177,7 @@ function generateOtp() {
 }
 var attempt=0;
 function ValidateOTP() {
-    var a = localStorage.getItem(otp);
+    var a = localStorage.getItem("otp");
     var b = document.getElementById("otpin").value;
     if (a == b && b.length > 0) {
         document.getElementById("otpError").visible=false;
