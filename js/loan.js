@@ -16,7 +16,7 @@ function NameValidation() {
     }
     else {
         document.getElementById("nameError").visible=false;
-        document.getElementById("nameError").innerHTML='name should contain 2 words having alphabets and 4 letters each';
+        document.getElementById("nameError").innerHTML='';
         enableSubmitButton();
     }
     var [first, last] = full_name.split(' ');
