@@ -128,7 +128,9 @@ function numberToWord()
         if( i +1 < size)
         {
             var thousandNum = digits[i] + digits[i+1]*10;
-            wordString[i] = "thousand " + tenth[thousandNum];
+            wordString[i] = "thousand " + oneToTwenty[i];
+            i = i+1;
+            wordString[i] = tenth[i]
         }
         else
         {
@@ -140,11 +142,13 @@ function numberToWord()
         if( i +1 < size)
         {
             var thousandNum = digits[i] + digits[i+1]*10;
-            wordString[i] = "lacs " + tenth[thousandNum];
+            wordString[i] = "lacs " + oneToTwenty[i];
+            i = i+1;
+            wordString[i] = tenth[i]
         }
         else
         {
-            wordString[i] = "lacs " + oneToTwenty[digits[i]];
+            wordString[i] =  oneToTwenty[digits[i]] + "lacs ";
         }
     }
     else if(i==7)
@@ -152,14 +156,16 @@ function numberToWord()
         if( i +1 < size)
         {
             var thousandNum = digits[i] + digits[i+1]*10;
-            wordString[i] = "coroe " + tenth[thousandNum];
+            wordString[i] = "corore " + oneToTwenty[i];
+            i = i+1;
+            wordString[i] = tenth[i]
         }
         else
         {
-            wordString[i] = "coroe " + oneToTwenty[digits[i]];
+            wordString[i] =  oneToTwenty[digits[i]] + "coroe ";
         }
     }
-   }
+   } 
    wordString.reverse();
    document.getElementById("words").style="color:green";
    document.getElementById("words").innerHTML = wordString;
