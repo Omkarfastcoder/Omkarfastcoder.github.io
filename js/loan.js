@@ -89,6 +89,83 @@ function LoanAmtValidation() {
     }
 }
 
+function numberToWord()
+{
+    let numberInput = document.querySelector('#loanAmt').value ;
+    let words = document.querySelector('#words');
+
+    let oneToTwenty = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ',
+    'eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+    let tenth = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+    
+    var digits = numberInput.toString().split('');
+    var realDigits = digits.map(Number)
+
+    var num = numberInput;
+    var digits = [];
+    while (num > 0) {
+        digits.push(num % 10);
+        num = Math.trunc(num / 10);
+    }
+   // digits.reverse();
+   var size = digits.length;
+
+   var wordString = [];
+   for (var i=0; i<size; i++)
+   {
+    if(i==0)   // ones
+        wordString[i] = oneToTwenty[digits[i]];
+    else if(i==1)   // tens
+    {
+        wordString[i] = tenth[digits[i]];
+    }
+    else if(i==2)  // hundred
+    {
+        wordString[i] = "hundred " + oneToTwenty[digits[i]];
+    }
+    else if(i==3)
+    {
+        if( i +1 < size)
+        {
+            var thousandNum = digits[i] + digits[i+1]*10;
+            wordString[i] = "thousand " + tenth[thousandNum];
+        }
+        else
+        {
+            wordString[i] = "thousand " + oneToTwenty[digits[i]];
+        }
+    }
+    else if(i==5)
+    {
+        if( i +1 < size)
+        {
+            var thousandNum = digits[i] + digits[i+1]*10;
+            wordString[i] = "lacs " + tenth[thousandNum];
+        }
+        else
+        {
+            wordString[i] = "lacs " + oneToTwenty[digits[i]];
+        }
+    }
+    else if(i==7)
+    {
+        if( i +1 < size)
+        {
+            var thousandNum = digits[i] + digits[i+1]*10;
+            wordString[i] = "coroe " + tenth[thousandNum];
+        }
+        else
+        {
+            wordString[i] = "coroe " + oneToTwenty[digits[i]];
+        }
+    }
+   }
+   wordString.reverse();
+   document.getElementById("words").style="color:green";
+   document.getElementById("words").innerHTML = wordString;
+}
+
+
 
 function doConvert(){
     let numberInput = document.querySelector('#loanAmt').value ;
