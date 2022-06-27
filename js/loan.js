@@ -91,14 +91,18 @@ function LoanAmtValidation() {
 
 function f1()
 {
-    var num=document.getElementById("loanamt");
+    var num=document.getElementById("loanAmt");
  var word=convert(num);
- document.getElementById("word").innerHTML=document.write(word);
+ document.getElementById("words").innerHTML=document.write(word);
 
 }
 
 function f2()
 {
+    let unit = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ',
+    'eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
+    let tens = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+    
 let str='';
     if(n<20)
     {
@@ -137,6 +141,7 @@ if (n<100)
      ss=f2(n/100) + crore + convert(n%100);
     
  }
+ return ss;
 }
 
 
