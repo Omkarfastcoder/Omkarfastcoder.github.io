@@ -98,8 +98,8 @@ function numberToWord()
     'eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
     let tenth = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
     
-    var digits = numberInput.toString().split('');
-    var realDigits = digits.map(Number)
+    var digits1 = numberInput.toString().split('');
+    var realDigits = digits1.map(Number)
 
     var num = numberInput;
     var digits = [];
