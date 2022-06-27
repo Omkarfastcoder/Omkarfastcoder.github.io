@@ -135,11 +135,11 @@ if (n<100)
  }
  else if(n>=100000 && n<1000000)
  {
-     ss=f2( Math.trunc(n/10000)) + " lakh " + convert(n%10000);
+     ss=f2( Math.trunc(n/100000)) + " lakh " + convert(n%100000);
  }
  else if(n>=1000000 && n<100000000)
  {
-     ss=f2( Math.trunc(n/100000)) + " crore " + convert(n%100000);
+     ss=f2( Math.trunc(n/1000000)) + " crore " + convert(n%1000000);
     
  }
  return ss;
