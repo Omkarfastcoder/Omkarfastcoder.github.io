@@ -96,11 +96,8 @@ function numberToWord()
 
     let oneToTwenty = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ',
     'eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
-    let tenth = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+    let tenth = ['' '' 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
     
-    var digits1 = numberInput.toString().split('');
-    var realDigits = digits1.map(Number)
-
     var num = numberInput;
     var digits = [];
     while (num > 0) {
