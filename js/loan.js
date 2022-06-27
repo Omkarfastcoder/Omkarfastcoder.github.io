@@ -113,13 +113,25 @@ function numberToWord()
    var wordString = [];
    for (var i=0; i<size; i++)
    {
+    if (numberInput < 20)
+    {
+        if(numberInput < 9)
+        {
+            wordString[i][digits[i]];
+        }
+        else
+            wordString[i] = oneToTwenty[digits[i] + digits[i+1]*10];
+    }
+    else
+    {
     if(i==0)   // ones
         wordString[i] = oneToTwenty[digits[i]];
     else if(i==1)   // tens
     {
         wordString[i] = tenth[digits[i]];
     }
-    else if(i==2)  // hundred
+    }
+    if(i==2)  // hundred
     {
         wordString[i] =  oneToTwenty[digits[i]] + "hundred ";
     }
