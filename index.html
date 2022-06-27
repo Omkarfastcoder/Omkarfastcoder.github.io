@@ -147,66 +147,15 @@
                 <label for="telephone">Contact Number:</label>
                 <input type="text" name="telephone" id="telephone" onblur="PhoneValidation()" required>
             </div>
-            <div>
-                <label for="haddress">Home Address:</label>
-                <input type="text" name="address" id="haddress">
-            </div>
-        </fieldset>
-
-        <fieldset class="wrapper">
-            <legend>Work Information</legend>
-            <div>
-                <label for="occupation">Current Occupation</label>
-                <input type="text" name="occupation" />
-            </div>
-            <div>
-                <label for="company name">Employer Name</label>
-                <input type="text" name="company name" />
-            </div>
-            <div>
-                <label for="company location">Employer Address</label>
-                <input type="text" name="company location" />
-            </div>
-        </fieldset>
-
-        <fieldset class="wrapper">
-            <legend>Loan Type & Amount</legend>
-            <div>
-                <label for="typeofloan">Select Loan Type: </label>
-                <select name="loan" id="typeofloan">
-                    <option value="s" selected>Select</option>
-                    <option value="c">Commercial</option>
-                    <option value="re">Real Estate</option>
-                    <option value="p">Personal</option>
-                    <option value="m">Mortgage</option>
-                </select>
-            </div>
+           
+    
             <div>
                 <label for="loanAmt">Enter Loan Amount:</label>
                 <input type="text" name="loanAmt" id="loanAmt" onkeyup="doConvert()" onblur="LoanAmtValidation()" required/>
                 <span id="words"></span>
             </div>
         </fieldset>
-
-        <fieldset class="mwrapper">
-            <legend>Marital Status</legend>
-            <input type="radio" id="Mr" name="MStatus" value="M">
-            <label for="Mr">Married</label>
-            <input type="radio" id="Ur" name="MStatus" value="U">
-            <label for="Ur">Unmarried</label>
-            <input type="radio" id="Dr" name="MStatus" value="D">
-            <label for="Dr">Divorced</label>
-        </fieldset>
-        <fieldset>
-            <legend>Gender</legend>
-            <label for="gender"> Select Gender:</label>
-            <select id="gender" id="gender">
-                <option value="none" selected>Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">other</option>
-            </select>
-        </fieldset>
+        
         <fieldset class="captcha">
             <legend>Verify Captcha</legend>
             <div class="img" id="captchaExp">
