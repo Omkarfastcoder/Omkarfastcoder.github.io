@@ -93,6 +93,7 @@ function f1()
 {
     var num=document.getElementById("loanAmt").value;
  var word=convert(num);
+ document.getElementById("words").style="color:green";
  document.getElementById("words").innerHTML = word;
 
 }
