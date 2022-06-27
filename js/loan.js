@@ -117,7 +117,7 @@ function numberToWord()
     {
         if(numberInput < 9)
         {
-            wordString[i][digits[i]];
+            wordString[i] = [digits[i]];
         }
         else
             wordString[i] = oneToTwenty[digits[i] + digits[i+1]*10];
@@ -139,9 +139,9 @@ function numberToWord()
     {
         if( i +1 < size)
         {
-            wordString[i] =  oneToTwenty[i] + "thousand " ;
+            wordString[i] =  oneToTwenty[digits[i]] + "thousand " ;
             i = i+1;
-            wordString[i] = tenth[i]
+            wordString[i] = tenth[digits[i]]
         }
         else
         {
@@ -152,9 +152,9 @@ function numberToWord()
     {
         if( i +1 < size)
         {
-            wordString[i] = oneToTwenty[i] + "lacs ";
+            wordString[i] = oneToTwenty[digits[i]] + "lacs ";
             i = i+1;
-            wordString[i] = tenth[i]
+            wordString[i] = tenth[digits[i]]
         }
         else
         {
@@ -165,9 +165,9 @@ function numberToWord()
     {
         if( i +1 < size)
         {
-            wordString[i] = oneToTwenty[i] + "coroe" ;
+            wordString[i] = oneToTwenty[digits[i]] + "coroe" ;
             i = i+1;
-            wordString[i] = tenth[i]
+            wordString[i] = tenth[digits[i]]
         }
         else
         {
