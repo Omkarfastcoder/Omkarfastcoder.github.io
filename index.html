@@ -132,20 +132,25 @@
         <fieldset class="wrapper">
             <legend>Basic Information</legend>
             <div>
-                <label for="fn">Full Name:</label>
+                <label for="fn">Full Name:
+                    <span style="color:red">*</span>
+                </label>
                 <input type="text" name="fname" id="fn" onchange="NameValidation()" required>
+                <p id="nameError"></p>
             </div>
             <div>
-                <label for="email">Email:</label>
+                <label for="email">Email:
+                    <span style="color:red">*</span>
+                </label>
                 <input type="email" name="email" id="email" onchange="EmailValidation()" required>
+                <p id="emailError"></p>
             </div>
             <div>
-                <label for="pan">Pan Card Number:</label>
+                <label for="pan">Pan Card Number:
+                    <span style="color:red">*</span>
+                </label>
                 <input type="text" name="pan" id="pan" onchange="PanValidation()" required>
-            </div>
-            <div>
-                <label for="telephone">Contact Number:</label>
-                <input type="number" name="phone" id="telephone" onchange="PhoneValidation()"  maxlength="10" required>
+                <p id="panError"></p>
             </div>
            
     
