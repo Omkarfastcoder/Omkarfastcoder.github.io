@@ -128,6 +128,7 @@ if (n<100)
     {
         ss="And"+f2(n);
     }
+    else{ss=f2(n);}
 }
  else if(n>=100 && n<1000)
  {
