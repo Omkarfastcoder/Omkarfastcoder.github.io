@@ -123,28 +123,23 @@ function convert(n)
 let ss='';
 if (n<100)
 {
-    f2(n);
-    if(f2(n)!=0)
-    {
-        ss="And"+f2(n);
-    }
-    else{ss=f2(n);}
+        ss=f2(n);  
 }
  else if(n>=100 && n<1000)
  {
-     ss= f2( Math.trunc(n/100)) + " hundred " + convert(n%100);
+     ss= f2( Math.trunc(n/100)) + " hundred " + convert(n%100) +" and ";
  }
  else if(n>=1000 && n<100000)
  {
-     ss= f2( Math.trunc(n/1000)) + " thousand " + convert(n%1000);
+     ss= f2( Math.trunc(n/1000)) + " thousand " + convert(n%1000) +" and ";
  }
  else if(n>=100000 && n<10000000)
  {
-     ss=f2( Math.trunc(n/100000)) + " lakh " + convert(n%100000);
+     ss=f2( Math.trunc(n/100000)) + " lakh " + convert(n%100000) +" and ";
  }
  else if(n>=10000000 && n<1000000000)
  {
-     ss=f2( Math.trunc(n/10000000)) + " crore " + convert(n%10000000);
+     ss=f2( Math.trunc(n/10000000)) + " crore " + convert(n%10000000) +" and ";
     
  }
  return ss;
