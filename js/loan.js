@@ -107,12 +107,12 @@ function f2(n)
 let str='';
     if(n<20)
     {
-        str=unit[n];
+        str= unit[n];
 
     }
     else if(n>=20 && n<100)
     {
-        str=tens[Math.trunc(n/10)] + " " + unit[n%10];
+        str= tens[Math.trunc(n/10)] + " " + unit[n%10];
         
     }
     return str;
@@ -126,7 +126,7 @@ if (n<100)
         ss= f2(n);  
 }
  else if(n>=100 && n<1000)
- {  if(convert(n%100) >0)
+ {  if(convert(n%100) > 0)
  {
      ss= f2( Math.trunc(n/100)) + " hundred  and " + convert(n%100);
  }
