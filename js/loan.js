@@ -123,11 +123,11 @@ function convert(n)
 let ss='';
 if (n<100)
 {
-    ss=f2(n);
+    ss=" and "+f2(n);
 }
  else if(n>=100 && n<1000)
  {
-     ss= " And " +f2( Math.trunc(n/100)) + " hundred " + convert(n%100);
+     ss= f2( Math.trunc(n/100)) + " hundred " + convert(n%100);
  }
  else if(n>=1000 && n<100000)
  {
