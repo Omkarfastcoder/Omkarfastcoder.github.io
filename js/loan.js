@@ -112,7 +112,7 @@ let str='';
     }
     else if(n>=20 && n<100)
     {
-        str=tens[Math.trunc(n/10)] + " " + unit[n%10];
+        str=" And "+tens[Math.trunc(n/10)] + " " + unit[n%10];
         
     }
     return str;
