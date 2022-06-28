@@ -112,7 +112,7 @@ let str='';
     }
     else if(n>=20 && n<100)
     {
-        str=tens[n%10] +unit[Math.trunc(n/10)];
+        str=tens[Math.trunc(n/10)] + " " + unit[n%10];
         
     }
     return str;
