@@ -164,11 +164,11 @@ if (n<100)
  {if( convert(n%10000000).length > 0 )
     
  {
-     ss=f2( Math.trunc(n/10000000)) + " crore and"+ convert(n%10000000);
+     ss=f2( Math.trunc(n/10000000)) + " crore "+ convert(n%10000000);
  
  }
  else{
-    ss=f2( Math.trunc(n/10000000)) + " crore "+ convert(n%10000000);
+    ss=f2( Math.trunc(n/10000000)) + " crore and "+ convert(n%10000000);
  }
  }
  
