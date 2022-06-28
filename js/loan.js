@@ -126,7 +126,7 @@ if (n<100)
         ss= f2(n);  
 }
  else if(n>=100 && n<1000)
- {  if(convert(n%100).length>0)
+ {  if(convert(n%100) >0)
  {
      ss= f2( Math.trunc(n/100)) + " hundred  and" + convert(n%100);
  }
