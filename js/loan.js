@@ -112,7 +112,7 @@ let str='';
     }
     else if(n>=20 && n<100)
     {
-        str=+tens[Math.trunc(n/10)] + " " + unit[n%10];
+        str=tens[Math.trunc(n/10)] + " " + unit[n%10];
         
     }
     return str;
@@ -123,7 +123,7 @@ function convert(n)
 let ss='';
 if (n<100)
 {
-    ss=" and "+f2(n);
+    ss=" and "+ f2(n);
 }
  else if(n>=100 && n<1000)
  {
